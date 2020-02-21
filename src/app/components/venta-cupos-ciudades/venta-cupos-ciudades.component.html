@@ -1,0 +1,75 @@
+<div class="">
+  <div class="uno">
+    <div class="form-group ml-2" id="formulario">
+      <br />
+      <h2>Opciones</h2>
+      <label for="sede">Sede:</label>
+      <select name="" id="sede" class="form-control" [(ngModel)]="selectedMemberShipCity.sede" required>
+        <option value="1">PALMIRA</option>
+        <option value="2">CALI</option>
+        <option value="3">TULUA</option>
+        <option value="4">PEREIRA</option>
+        <option value="5">ARMENIA</option>
+        <option value="6">PIENDAMÓ</option>
+        <option value="7">CHINCHINÁ</option>
+      </select>
+      <br />
+      <label for="fechaIni" >Fecha Inicio</label>
+      <input type="date" class="form-control" [(ngModel)]="selectedMemberShipCity.fecha_ini" required/>
+      <br />
+      <label for="fechaFin">Fecha Final</label>
+      <input type="date" class="form-control " [(ngModel)]="selectedMemberShipCity.fecha_fin" required/>
+      <br />
+      <label for="criterio">Criterio</label>
+      <select name="criterio" id="criterio" class="form-control" [(ngModel)]="selectedMemberShipCity.criterio" required>
+        <option value="1">MAYOR NUMERO DE VENTAS</option>
+        <option value="0">MENOR NUMERO DE VENTAS</option>
+      </select>
+      <br />
+      <input type="submit" class="btn btn-success" value="Consultar" (click)="getAllMemberShipByCity()" />
+    </div>
+  </div>
+  <div class="hero">
+    <div class="dos mt-3">
+      <!-- <label for="cons" class="mt-3">Consultas disponibles</label>
+      <select name="cons" id="cons" class="form-control ancho">
+        <option value="1">Venta de Cupos por Ciudades</option>
+        <option value="1">Venta de Cupos por Vendedor</option>
+        <option value="1">Venta de Cupos por Sede</option>
+        <option value="1">Venta de Cupos por Perfíl Demográfico</option>
+      </select> -->
+      <h3>
+        Ciudades con Mayor Número de Ventas para la SEDE {{selectedMemberShipCity.sede}}<br />
+        durante el periodo seleccionado
+      </h3>
+    </div>
+    <div class="tres mt-3 ml-2">
+      <div class="chart-uno">
+        <google-chart
+          #chart
+          [title]="title"
+          [type]="type"
+          [data]="data"
+          [columnNames]="columnNames"
+          [options]="options"
+          [width]="width"
+          [height]="height"
+        >
+        </google-chart>
+      </div>
+<!--       <div class="chart-dos">
+        <google-chart
+          #chart
+          [title]="title1"
+          [type]="type1"
+          [data]="data1"
+          [columnNames]="columnNames1"
+          [options]="options1"
+          [width]="width1"
+          [height]="height1"
+        >
+        </google-chart>
+      </div> -->
+    </div>
+  </div>
+</div>

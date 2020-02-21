@@ -1,0 +1,53 @@
+.uno {
+    /* background-color: yellow; */
+    height: 900px;
+    width: 30%;
+    display: inline-block;
+    border: 1px solid gray;
+    text-align: center;
+    
+}
+
+.dos {
+    /* background-color: blue; */
+    width: 100%;
+    text-align: center;
+    
+}
+
+.tres {
+    /* background-color: red; */
+    width: 96%;
+}
+
+.hero {
+    /* background-color: green; */
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+    height: 900px;
+    border: 0.5px solid gray;
+}
+
+.ancho {
+    width: 80%;
+}
+
+.chart-uno {
+    width: 100%;
+    height: 50%;
+    display: inline-block;
+  /*   background-color: red; */
+}
+
+.chart-dos {
+    width: 70%;
+    display: inline-block;
+  /*   background-color: blue; */
+}
+
+#formulario {
+    display:block;
+    margin-left: 20px;
+    margin-right: 20px;
+}

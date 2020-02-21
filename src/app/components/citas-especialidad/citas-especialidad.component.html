@@ -1,0 +1,147 @@
+<div class="">
+  <div class="uno">
+    <div class="form-group ml-2" id="formulario">
+      <br />
+      <h2>Opciones</h2>
+      <br>
+      <label for="tipo">Consulta por:</label>
+      <select name="tipo" id="tipo" [(ngModel)]="tipoConsulta" (ngModelChange)="store()" class="form-control">
+        <option value="1">Citas por Especialidad</option>
+        <option value="2">Citas por Especialista</option>
+        <option value="3">Citas por Examen</option>
+        <option value="4">Otros Servicios</option>
+        <option value="5">Citas por Institución</option>
+      </select>
+      <br>
+      <label for="genero">Genero:</label>
+      <select
+        name=""
+        id="genero"
+        class="form-control"
+        [(ngModel)]="selectedAppointmentsBySpecialty.genero"
+        required
+      >
+        <option value="M">MASCULINO</option>
+        <option value="F">FEMENINO</option>
+      </select>
+      <br />
+      <label for="estrato">Estrato:</label>
+      <select
+        name=""
+        id="estrato"
+        class="form-control"
+        [(ngModel)]="selectedAppointmentsBySpecialty.estrato"
+        required
+      >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+      <br />
+      <label for="edad">Edad:</label>
+      <select
+        name=""
+        id="edad"
+        class="form-control"
+        [(ngModel)]="selectedAppointmentsBySpecialty.edad"
+        required
+      >
+        <option value="1">Menor a 18 años</option>
+        <option value="2">De 18 a 25 años</option>
+        <option value="3">de 26 a 40 años</option>
+        <option value="4">de 41 a 50 años</option>
+        <option value="5">de 51 a 60 años</option>
+        <option value="6">Mayor a 60 años</option>
+      </select>
+      <br />
+      <label for="edad">Ingresos:</label>
+      <select
+        name=""
+        id="edad"
+        class="form-control"
+        [(ngModel)]="selectedAppointmentsBySpecialty.ingreso"
+        required
+      >
+        <option value="1">Menor a 1.000.000 de pesos</option>
+        <option value="2">De 1.000.001 a 2.000.000 de pesos</option>
+        <option value="3">De 2.000.001 a 4.000.000 de pesos</option>
+        <option value="4">De 4.000.001 a 5.000.000 de pesos</option>
+        <option value="5">Mayor a 5.000.000 de pesos</option>
+      </select>
+      <br />
+      <label for="fechaIni">Fecha Inicio</label>
+      <input
+        type="date"
+        class="form-control"
+        [(ngModel)]="selectedAppointmentsBySpecialty.fecha_ini"
+        required
+      />
+      <br />
+      <label for="fechaFin">Fecha Final</label>
+      <input
+        type="date"
+        class="form-control "
+        [(ngModel)]="selectedAppointmentsBySpecialty.fecha_fin"
+        required
+      />
+      <br />
+      <input
+        type="submit"
+        class="btn btn-success"
+        value="Consultar"
+        (click)="methodo()"
+      />
+    <!--   <input
+        type="submit"
+        class="btn btn-success"
+        value="Consultar"
+        (click)="getAllAppointmentsBySpecialty()"
+      /> -->
+    </div>
+  </div>
+  <div class="hero">
+    <div class="dos mt-3">
+      <!-- <label for="cons" class="mt-3">Consultas disponibles</label>
+        <select name="cons" id="cons" class="form-control ancho">
+          <option value="1">Venta de Cupos por Ciudades</option>
+          <option value="1">Venta de Cupos por Vendedor</option>
+          <option value="1">Venta de Cupos por Sede</option>
+          <option value="1">Venta de Cupos por Perfíl Demográfico</option>
+        </select> -->
+      <h3>
+       {{titleMain}}
+      </h3>
+    </div>
+    <div class="tres mt-3 ml-2">
+      <div class="chart-uno">
+        <google-chart
+          #chart
+          [title]="title"
+          [type]="type"
+          [data]="data"
+          [columnNames]="columnNames"
+          [options]="options"
+          [width]="width"
+          [height]="height"
+        >
+        </google-chart>
+      </div>
+      <!--       <div class="chart-dos">
+          <google-chart
+            #chart
+            [title]="title1"
+            [type]="type1"
+            [data]="data1"
+            [columnNames]="columnNames1"
+            [options]="options1"
+            [width]="width1"
+            [height]="height1"
+          >
+          </google-chart>
+        </div> -->
+    </div>
+  </div>
+</div>

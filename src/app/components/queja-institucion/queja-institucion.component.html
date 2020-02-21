@@ -1,0 +1,94 @@
+<div class="">
+    <div class="uno">
+      <div class="form-group ml-2" id="formulario">
+        <br />
+        <h2>Opciones</h2>
+        <br />
+        <label for="especialista">Institución:</label>
+        <select
+          name=""
+          id="institucion"
+          class="form-control"
+          [(ngModel)]="selectedInstitutionComplain.institucion"
+          required
+        >
+          <option value="1">--Seleccione una --</option>
+          <option *ngFor="let x of institutions.sort()" value="{{ x.id }}" style="color: black;"
+            >{{x.nombre_institucion}}</option
+          >
+        </select>
+        <br />
+        <label for="calificacion">Calificación:</label>
+        <select
+          name=""
+          id="calificacion"
+          class="form-control"
+          [(ngModel)]="selectedInstitutionComplain.calificacion"
+          required
+        >
+          <option value="1">NEGATIVO</option>
+          <option value="2">NEUTRAL</option>
+          <option value="3">POSITIVO</option>
+        </select>
+        <br />
+        <label for="fechaIni">Fecha Inicio</label>
+        <input
+          type="date"
+          class="form-control"
+          [(ngModel)]="selectedInstitutionComplain.fecha_ini"
+          required
+        />
+        <br />
+        <label for="fechaFin">Fecha Final</label>
+        <input
+          type="date"
+          class="form-control "
+          [(ngModel)]="selectedInstitutionComplain.fecha_fin"
+          required
+        />
+        <br />
+        <input
+          type="submit"
+          class="btn btn-success"
+          value="Consultar"
+          (click)="getAllInstitutionComplain()"
+        />
+      </div>
+    </div>
+    <div class="hero">
+      <div class="dos mt-3">
+        <h3>
+          Quejas por Institución
+        </h3>
+      </div>
+      <div class="tres mt-3 ml-2">
+        <div class="chart-uno">
+          <google-chart
+            #chart
+            [title]="title"
+            [type]="type"
+            [data]="data"
+            [columnNames]="columnNames"
+            [options]="options"
+            [width]="width"
+            [height]="height"
+          >
+          </google-chart>
+        </div>
+        <!--       <div class="chart-dos">
+              <google-chart
+                #chart
+                [title]="title1"
+                [type]="type1"
+                [data]="data1"
+                [columnNames]="columnNames1"
+                [options]="options1"
+                [width]="width1"
+                [height]="height1"
+              >
+              </google-chart>
+            </div> -->
+      </div>
+    </div>
+  </div>
+

@@ -1,0 +1,108 @@
+<div class="">
+  <div class="uno">
+    <div class="form-group ml-2" id="formulario">
+      <br />
+      <h2>Opciones</h2>
+      <br />
+      <label for="ciudad">Ciudad:</label>
+      <select
+        name=""
+        id="ciudad"
+        class="form-control"
+        [(ngModel)]="selectedServiceRequest.ciudad"
+        required
+      >
+        <option value="1">--Seleccione una --</option>
+        <option *ngFor="let x of cities.sort()" value="{{ x.id }}" style="color: black;"
+          >{{x.nombre_ciudad}}</option
+        >
+      </select>
+      <br />
+      <label for="ciudad">Tipo de Servicio:</label>
+      <select
+        name=""
+        id="ciudad"
+        class="form-control"
+        [(ngModel)]="selectedServiceRequest.tipo_servicio"
+        required
+      >
+        <option value="SALUD">SALUD</option>
+        <option value="RECREACION">RECREACION</option>
+        <option value="COMERCIAL">COMERCIAL</option>
+        <option value="EDUCACION">EDUCACION</option>
+      
+      </select>
+      <br />
+      <label for="fechaIni">Fecha Inicio</label>
+      <input
+        type="date"
+        class="form-control"
+        [(ngModel)]="selectedServiceRequest.fecha_ini"
+        required
+      />
+      <br />
+      <label for="fechaFin">Fecha Final</label>
+      <input
+        type="date"
+        class="form-control "
+        [(ngModel)]="selectedServiceRequest.fecha_fin"
+        required
+      />
+      <br />
+      <input
+        type="submit"
+        class="btn btn-success"
+        value="Consultar"
+        (click)="getAllServiceRequest()"
+      />
+      <!--   <input
+          type="submit"
+          class="btn btn-success"
+          value="Consultar"
+          (click)="getAllAppointmentsBySpecialty()"
+        /> -->
+    </div>
+  </div>
+  <div class="hero">
+    <div class="dos mt-3">
+      <!-- <label for="cons" class="mt-3">Consultas disponibles</label>
+          <select name="cons" id="cons" class="form-control ancho">
+            <option value="1">Venta de Cupos por Ciudades</option>
+            <option value="1">Venta de Cupos por Vendedor</option>
+            <option value="1">Venta de Cupos por Sede</option>
+            <option value="1">Venta de Cupos por Perfíl Demográfico</option>
+          </select> -->
+      <h3>
+        Consulta por solicitud de servicio
+      </h3>
+    </div>
+    <div class="tres mt-3 ml-2">
+      <div class="chart-uno">
+        <google-chart
+          #chart
+          [title]="title"
+          [type]="type"
+          [data]="data"
+          [columnNames]="columnNames"
+          [options]="options"
+          [width]="width"
+          [height]="height"
+        >
+        </google-chart>
+      </div>
+      <!--       <div class="chart-dos">
+            <google-chart
+              #chart
+              [title]="title1"
+              [type]="type1"
+              [data]="data1"
+              [columnNames]="columnNames1"
+              [options]="options1"
+              [width]="width1"
+              [height]="height1"
+            >
+            </google-chart>
+          </div> -->
+    </div>
+  </div>
+</div>
