@@ -21,10 +21,11 @@ import { CitasOtrosComponent } from './components/citas-otros/citas-otros.compon
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { QuejaEspecialistaComponent } from './components/queja-especialista/queja-especialista.component';
 import { QuejaInstitucionComponent } from './components/queja-institucion/queja-institucion.component';
+import { HomeComponent } from './components/home/home.component';
 
 const appRoutes: Routes = [{ path: "login", component: LoginComponent }];
 @NgModule({
-  declarations: [AppComponent, LoginComponent, VentaCuposCiudadesComponent, VentaCuposVendedorComponent, CitasEspecialidadComponent, CitasEspecialistaComponent, CitasExamenComponent, CitasInstitucionComponent, CitasOtrosComponent, SolicitudComponent, QuejaEspecialistaComponent, QuejaInstitucionComponent],
+  declarations: [AppComponent, LoginComponent, VentaCuposCiudadesComponent, VentaCuposVendedorComponent, CitasEspecialidadComponent, CitasEspecialistaComponent, CitasExamenComponent, CitasInstitucionComponent, CitasOtrosComponent, SolicitudComponent, QuejaEspecialistaComponent, QuejaInstitucionComponent, HomeComponent],
   imports: [
     BrowserModule,
     FormsModule,

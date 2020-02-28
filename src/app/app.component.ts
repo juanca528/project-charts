@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 declare var google;
+declare var jQuery: any;
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
@@ -69,4 +70,5 @@ export class AppComponent  {
       chart.draw(data, options);
     } */
   }
+  
 }

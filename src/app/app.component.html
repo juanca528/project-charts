@@ -1,6 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Tesis</a>
+  <a class="navbar-brand" routerLink="/home">Tesis</a>
   <button
     class="navbar-toggler"
     type="button"
@@ -31,13 +31,13 @@
             class="nav-link"
             routerLink="/venta-cupo-ciudad"
             style="color: black;"
-            >Venta de cupos por Ciudad</a
+            >Total cupos por ciudad según la sede</a
           >
           <a
             class="nav-link"
             routerLink="/venta-cupo-vendedor"
             style="color: black;"
-            >Venta de cupos por Vendedor ó Sede</a
+            >Total cupos por vendedor según la sede</a
           >
         </div>
       </li>
@@ -58,15 +58,15 @@
             class="nav-link"
             routerLink="/citas-especialidad"
             style="color: black;"
-            >Citas por Especialidad</a
+            >Total de acercamientos según:</a
           >
           <a class="nav-link" routerLink="/citas-otros" style="color: black;"
-            >Citas para otros Servicios</a
+            >Total acercamientos según otros Servicios</a
           >
         </div>
       </li>
-      <li class="nav-item" >
-        <a class="nav-link" routerLink="/servicio-solicitud" >Solicitud</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/servicio-solicitud">Solicitud</a>
       </li>
       <li class="nav-item dropdown">
         <a
@@ -87,7 +87,10 @@
             style="color: black;"
             >Quejas Especialista</a
           >
-          <a class="nav-link" routerLink="/queja-institucion" style="color: black;"
+          <a
+            class="nav-link"
+            routerLink="/queja-institucion"
+            style="color: black;"
             >Quejas Institución</a
           >
         </div>
@@ -123,6 +126,7 @@
     </ul>
   </div>
 </nav>
+
 <!-- <mat-slider min="1" max="100" step="1" value="1"></mat-slider> -->
 <!-- <div style="text-align:center">
   <div style="background-color: red; width: 50%;">

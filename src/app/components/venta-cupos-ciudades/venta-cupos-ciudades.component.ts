@@ -8,7 +8,7 @@ import { CupoService } from "src/app/services/cupo.service";
 })
 export class VentaCuposCiudadesComponent implements OnInit {
   selectedMemberShipCity;
-  title = "Afiliaciones por ciudades en un determinado año";
+  title = "";
   type = "PieChart";
   data =[];
   columnNames = ["Ciudad", "Cantidad afiliacione"];
@@ -42,8 +42,7 @@ export class VentaCuposCiudadesComponent implements OnInit {
     this.selectedMemberShipCity = {
       sede: "",
       fecha_ini: "",
-      fecha_fin: "",
-      criterio: ""
+      fecha_fin: ""
     };
   }
 
@@ -55,7 +54,7 @@ export class VentaCuposCiudadesComponent implements OnInit {
         console.log(data);
         console.log(entries);
         
-        this.title = "Afiliaciones por ciudades en un determinado año";
+        this.title = "";
         this.type = "PieChart";
         this.data = entries;
         this.columnNames = ["Ciudad", "Cantidad afiliacione"];

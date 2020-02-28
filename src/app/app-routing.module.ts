@@ -10,6 +10,7 @@ import { CitasOtrosComponent } from './components/citas-otros/citas-otros.compon
 import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { QuejaEspecialistaComponent } from './components/queja-especialista/queja-especialista.component';
 import { QuejaInstitucionComponent } from './components/queja-institucion/queja-institucion.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   { path: "venta-cupo-ciudad", component: VentaCuposCiudadesComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: "citas-otros", component: CitasOtrosComponent },
   { path: "servicio-solicitud", component: SolicitudComponent },
   { path: "queja-especialista", component: QuejaEspecialistaComponent},
-  { path: "queja-institucion", component: QuejaInstitucionComponent }
+  { path: "queja-institucion", component: QuejaInstitucionComponent },
+  { path: "home", component: HomeComponent }
   
 ];
 

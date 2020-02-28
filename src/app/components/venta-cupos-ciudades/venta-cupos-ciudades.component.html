@@ -20,12 +20,12 @@
       <label for="fechaFin">Fecha Final</label>
       <input type="date" class="form-control " [(ngModel)]="selectedMemberShipCity.fecha_fin" required/>
       <br />
-      <label for="criterio">Criterio</label>
+<!--       <label for="criterio">Criterio</label>
       <select name="criterio" id="criterio" class="form-control" [(ngModel)]="selectedMemberShipCity.criterio" required>
         <option value="1">MAYOR NUMERO DE VENTAS</option>
         <option value="0">MENOR NUMERO DE VENTAS</option>
       </select>
-      <br />
+      <br /> -->
       <input type="submit" class="btn btn-success" value="Consultar" (click)="getAllMemberShipByCity()" />
     </div>
   </div>
@@ -39,7 +39,7 @@
         <option value="1">Venta de Cupos por Perfíl Demográfico</option>
       </select> -->
       <h3>
-        Ciudades con Mayor Número de Ventas para la SEDE {{selectedMemberShipCity.sede}}<br />
+        Total de cupos por ciudad, para la sede {{selectedMemberShipCity.sede}}<br />
         durante el periodo seleccionado
       </h3>
     </div>

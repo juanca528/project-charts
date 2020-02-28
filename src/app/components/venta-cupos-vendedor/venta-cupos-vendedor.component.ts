@@ -8,7 +8,7 @@ import { CupoService } from "src/app/services/cupo.service";
 })
 export class VentaCuposVendedorComponent implements OnInit {
   selectedMemberShipSeller;
-  title = "Afiliaciones por ciudades en un determinado año";
+  title = "";
   type = "PieChart";
   data =[];
   columnNames = ["Ciudad", "Cantidad afiliacione"];
@@ -29,7 +29,7 @@ export class VentaCuposVendedorComponent implements OnInit {
       data => {
         console.log(data.VENDEDORES);
         let item = Object.entries(data.VENDEDORES);
-        this.title = "Vendedores de una sede por un rango de fecha";
+        this.title = "";
         this.type = "BarChart";
         this.data = item;
         this.columnNames = ["Vendedor", "Cant. Afil."];
