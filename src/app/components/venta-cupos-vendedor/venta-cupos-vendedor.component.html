@@ -9,6 +9,8 @@
           type="checkbox"
           value=""
           id="defaultCheck1"
+          [checked]="params"
+          (ngModelChange)="comparations()"
         />
         <label class="form-check-label" for="defaultCheck1">
           Consulta por vendedor
@@ -20,6 +22,8 @@
           type="checkbox"
           value=""
           id="defaultCheck2"
+          [checked]="params1"
+          (ngModelChange)="comparations()"
         />
         <label class="form-check-label" for="defaultCheck2">
           Consulta por sede

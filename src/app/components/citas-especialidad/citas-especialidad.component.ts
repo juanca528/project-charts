@@ -10,6 +10,8 @@ export class CitasEspecialidadComponent implements OnInit {
   selectedAppointmentsBySpecialty;
   tipoConsulta;
   titleMain;
+  params1 = true;
+  params2 = true;
   title = "Afiliaciones por ciudades en un determinado año";
   type = "PieChart";
   data = [];
@@ -17,6 +19,18 @@ export class CitasEspecialidadComponent implements OnInit {
   options = {};
   width = 700;
   height = 500;
+
+  //
+  title1 = "";
+  type1 = "BarChart";
+  data1 = [];
+  columnNames1 = ["Vendedor", "Cant. Afil."];
+  options1 = {};
+  title2 = "";
+  type2 = "ScatterChart";
+  data2 = [];
+  columnNames2 = ["Vendedor", "Cant. Afil."];
+  options2 = {};
   constructor(private api: CitaService) {
     this.selectedAppointmentsBySpecialty = {
       genero: "",
@@ -24,30 +38,46 @@ export class CitasEspecialidadComponent implements OnInit {
       edad: "",
       ingreso: "",
       fecha_ini: "",
-      fecha_fin: ""
+      fecha_fin: "",
+      criterio: ""
     };
+  }
+
+  comparacion() {
+    if (this.selectedAppointmentsBySpecialty.criterio == 1) {
+      this.params1 = false;
+      this.params2 = true;
+    }
+    if (this.selectedAppointmentsBySpecialty.criterio == 2) {
+      this.params1 = false;
+      this.params2 = false;
+    }
   }
 
   store() {
     if (this.tipoConsulta == 1) {
       console.log(1);
-      this.titleMain = "Citas por Especialidad";
+      this.titleMain =
+        "Total citas por especialidad según perfíl sociodemográfico";
     }
     if (this.tipoConsulta == 2) {
       console.log(2);
-      this.titleMain = "Citas por Especialista";
+      this.titleMain =
+        "Total citas por especialista según perfíl sociodemográfico";
     }
     if (this.tipoConsulta == 3) {
       console.log(3);
-      this.titleMain = "Citas por Examen";
+      this.titleMain = "Total citas por examenes según perfíl sociodemográfico";
     }
     if (this.tipoConsulta == 4) {
       console.log(4);
-      this.titleMain = "Otros servicios";
+      this.titleMain =
+        "Total citas por otro servicios según perfíl sociodemográfico";
     }
     if (this.tipoConsulta == 5) {
       console.log(5);
-      this.titleMain = "Citas por Institución";
+      this.titleMain =
+        "Total citas por institución según perfíl sociodemográfico";
     }
   }
 
@@ -65,7 +95,7 @@ export class CitasEspecialidadComponent implements OnInit {
       this.getAllOtherService();
     }
     if (this.tipoConsulta == 5) {
-     this.getAllInstitutionAppointments()
+      this.getAllInstitutionAppointments();
     }
   }
 
@@ -76,12 +106,30 @@ export class CitasEspecialidadComponent implements OnInit {
         data => {
           console.log(data);
           let items = Object.entries(data);
+          var filt = items.slice(0, 9);
+
           this.title = "Citas por especialidad";
           this.type = "PieChart";
-          this.data = items;
+          this.data = filt;
           this.columnNames = ["Ciudad", "Cantidad afiliacione"];
           this.options = {};
           this.width = 700;
+          this.height = 500;
+
+          this.title1 = "";
+          this.type1 = "BarChart";
+          this.data1 = filt;
+          this.columnNames1 = ["Vendedor", "Cant. Afil."];
+          this.options1 = {};
+          this.width = 900;
+          this.height = 500;
+
+          this.title2 = "";
+          this.type2 = "ComboChart";
+          this.data2 = filt;
+          this.columnNames2 = ["Vendedor", "Cant. Afil."];
+          this.options2 = {};
+          this.width = 900;
           this.height = 500;
         },
         error => {
@@ -104,6 +152,14 @@ export class CitasEspecialidadComponent implements OnInit {
           this.options = {};
           this.width = 700;
           this.height = 500;
+
+          this.title1 = "";
+          this.type1 = "ColumnChart";
+          this.data1 = items;
+          this.columnNames1 = ["Vendedor", "Cant. Afil."];
+          this.options1 = {};
+          this.width = 900;
+          this.height = 500;
         },
         error => {
           console.log(error);
@@ -125,6 +181,14 @@ export class CitasEspecialidadComponent implements OnInit {
           this.options = {};
           this.width = 700;
           this.height = 500;
+
+          this.title1 = "";
+          this.type1 = "ColumnChart";
+          this.data1 = items;
+          this.columnNames1 = ["Vendedor", "Cant. Afil."];
+          this.options1 = {};
+          this.width = 900;
+          this.height = 500;
         },
         error => {
           console.log(error);
@@ -143,6 +207,14 @@ export class CitasEspecialidadComponent implements OnInit {
         this.columnNames = ["Examen", "Cantidad"];
         this.options = {};
         this.width = 700;
+        this.height = 500;
+
+        this.title1 = "";
+        this.type1 = "ColumnChart";
+        this.data1 = items;
+        this.columnNames1 = ["Otros Servicios", "Cant. Afil."];
+        this.options1 = {};
+        this.width = 900;
         this.height = 500;
       },
       error => {
@@ -164,6 +236,14 @@ export class CitasEspecialidadComponent implements OnInit {
           this.columnNames = ["Institucion", "Cantidad"];
           this.options = {};
           this.width = 700;
+          this.height = 500;
+
+          this.title1 = "";
+          this.type1 = "ColumnChart";
+          this.data1 = items;
+          this.columnNames1 = ["Institucion", "Cant. Afil."];
+          this.options1 = {};
+          this.width = 900;
           this.height = 500;
         },
         error => {

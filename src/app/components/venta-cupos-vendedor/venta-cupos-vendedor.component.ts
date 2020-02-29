@@ -8,9 +8,11 @@ import { CupoService } from "src/app/services/cupo.service";
 })
 export class VentaCuposVendedorComponent implements OnInit {
   selectedMemberShipSeller;
+  params = true;
+  params1 = false;
   title = "";
   type = "PieChart";
-  data =[];
+  data = [];
   columnNames = ["Ciudad", "Cantidad afiliacione"];
   options = {};
   width = 700;
@@ -22,6 +24,17 @@ export class VentaCuposVendedorComponent implements OnInit {
       fecha_fin: "",
       sede: ""
     };
+  }
+
+  comparations() {
+    if (this.params === true) {
+      this.params = false;
+      this.params1 = true;
+    }
+    if (this.params === false) {
+      this.params = true;
+      this.params1 = false;
+    }
   }
 
   getAllMemberShipBySeller = () => {
@@ -36,11 +49,11 @@ export class VentaCuposVendedorComponent implements OnInit {
         this.options = {};
         this.width = 700;
         this.height = 500;
-      }, error => {
+      },
+      error => {
         console.log(error);
-        
       }
-    )
-  }
+    );
+  };
   ngOnInit() {}
 }

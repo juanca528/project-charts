@@ -22,6 +22,7 @@ import { SolicitudComponent } from './components/solicitud/solicitud.component';
 import { QuejaEspecialistaComponent } from './components/queja-especialista/queja-especialista.component';
 import { QuejaInstitucionComponent } from './components/queja-institucion/queja-institucion.component';
 import { HomeComponent } from './components/home/home.component';
+import { MaterialModule } from "./material.module";
 
 const appRoutes: Routes = [{ path: "login", component: LoginComponent }];
 @NgModule({
@@ -34,7 +35,8 @@ const appRoutes: Routes = [{ path: "login", component: LoginComponent }];
     BrowserAnimationsModule,
     MatSliderModule,
     RouterModule.forRoot(appRoutes),
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]

@@ -3,30 +3,68 @@
     <div class="form-group ml-2" id="formulario">
       <br />
       <h2>Opciones</h2>
-      <br>
-      <label for="tipo">Consulta por:</label>
-      <select name="tipo" id="tipo" [(ngModel)]="tipoConsulta" (ngModelChange)="store()" class="form-control">
+      <br />
+      <label for="tipo">Tipo de consulta:</label>
+      <select
+        name="tipo"
+        id="tipo"
+        [(ngModel)]="tipoConsulta"
+        (ngModelChange)="store()"
+        class="form-control"
+      >
         <option value="1">Citas por Especialidad</option>
         <option value="2">Citas por Especialista</option>
         <option value="3">Citas por Examen</option>
-        <option value="4">Otros Servicios</option>
+        <option value="4">Citas por Tipo de Servicio</option>
         <option value="5">Citas por Institución</option>
       </select>
-      <br>
-      <label for="genero">Genero:</label>
+      <br />
+      <label for="tipo">Consulta por:</label>
+      <select
+        name="tipo"
+        id="tipo"
+        [(ngModel)]="selectedAppointmentsBySpecialty.criterio"
+        (ngModelChange)="comparacion()"
+        class="form-control"
+      >
+        <option value="1">Rango de Fecha</option>
+        <option value="2">Perfíl sociodemográfico + Rango de fecha</option>
+      </select>
+      <br />
+      <label for="fechaIni" [hidden]="params1">Fecha Inicio</label>
+      <input
+        [hidden]="params1"
+        type="date"
+        class="form-control"
+        [(ngModel)]="selectedAppointmentsBySpecialty.fecha_ini"
+        required
+      />
+      <br />
+      <label for="fechaFin" [hidden]="params1">Fecha Final</label>
+      <input
+        [hidden]="params1"
+        type="date"
+        class="form-control "
+        [(ngModel)]="selectedAppointmentsBySpecialty.fecha_fin"
+        required
+      />
+      <br />
+      <label for="genero" [hidden]="params2">Genero:</label>
       <select
         name=""
         id="genero"
         class="form-control"
         [(ngModel)]="selectedAppointmentsBySpecialty.genero"
         required
+        [hidden]="params2"
       >
         <option value="M">MASCULINO</option>
         <option value="F">FEMENINO</option>
       </select>
       <br />
-      <label for="estrato">Estrato:</label>
+      <label for="estrato" [hidden]="params2">Estrato:</label>
       <select
+        [hidden]="params2"
         name=""
         id="estrato"
         class="form-control"
@@ -41,8 +79,9 @@
         <option value="6">6</option>
       </select>
       <br />
-      <label for="edad">Edad:</label>
+      <label for="edad" [hidden]="params2">Edad:</label>
       <select
+        [hidden]="params2"
         name=""
         id="edad"
         class="form-control"
@@ -57,8 +96,9 @@
         <option value="6">Mayor a 60 años</option>
       </select>
       <br />
-      <label for="edad">Ingresos:</label>
+      <label for="edad" [hidden]="params2">Ingresos:</label>
       <select
+        [hidden]="params2"
         name=""
         id="edad"
         class="form-control"
@@ -72,29 +112,13 @@
         <option value="5">Mayor a 5.000.000 de pesos</option>
       </select>
       <br />
-      <label for="fechaIni">Fecha Inicio</label>
-      <input
-        type="date"
-        class="form-control"
-        [(ngModel)]="selectedAppointmentsBySpecialty.fecha_ini"
-        required
-      />
-      <br />
-      <label for="fechaFin">Fecha Final</label>
-      <input
-        type="date"
-        class="form-control "
-        [(ngModel)]="selectedAppointmentsBySpecialty.fecha_fin"
-        required
-      />
-      <br />
       <input
         type="submit"
         class="btn btn-success"
         value="Consultar"
         (click)="methodo()"
       />
-    <!--   <input
+      <!--   <input
         type="submit"
         class="btn btn-success"
         value="Consultar"
@@ -112,22 +136,53 @@
           <option value="1">Venta de Cupos por Perfíl Demográfico</option>
         </select> -->
       <h3>
-       {{titleMain}}
+        {{ titleMain }}
       </h3>
     </div>
     <div class="tres mt-3 ml-2">
       <div class="chart-uno">
-        <google-chart
-          #chart
-          [title]="title"
-          [type]="type"
-          [data]="data"
-          [columnNames]="columnNames"
-          [options]="options"
-          [width]="width"
-          [height]="height"
-        >
-        </google-chart>
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Torta">
+            <google-chart
+              #chart
+              [title]="title"
+              [type]="type"
+              [data]="data"
+              [columnNames]="columnNames"
+              [options]="options"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+          <mat-tab label="Barras">
+            <google-chart
+              #chart
+              [title]="title1"
+              [type]="type1"
+              [data]="data1"
+              [columnNames]="columnNames1"
+              [options]="options1"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+
+          <mat-tab label="Puntos">
+            <google-chart
+            #chart
+            [title]="title2"
+            [type]="type2"
+            [data]="data2"
+            [columnNames]="columnNames2"
+            [options]="options2"
+            [width]="width"
+            [height]="height"
+          >
+          </google-chart>
+          </mat-tab>
+        </mat-tab-group>
       </div>
       <!--       <div class="chart-dos">
           <google-chart

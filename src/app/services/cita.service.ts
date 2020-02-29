@@ -20,7 +20,8 @@ export class CitaService {
       edad: query.edad,
       ingreso: query.ingreso,
       fecha_ini: query.fecha_ini,
-      fecha_fin: query.fecha_fin
+      fecha_fin: query.fecha_fin,
+      criterio: query.criterio
     };
     return this.http.post(this.ENDPOINT + "/cita-especialidad/", BODY, {
       headers: this.httpHeaders
@@ -34,7 +35,8 @@ export class CitaService {
       edad: query.edad,
       ingreso: query.ingreso,
       fecha_ini: query.fecha_ini,
-      fecha_fin: query.fecha_fin
+      fecha_fin: query.fecha_fin,
+      criterio: query.criterio
     };
     return this.http.post(this.ENDPOINT + "/cita-especialista/", BODY, {
       headers: this.httpHeaders
@@ -48,7 +50,8 @@ export class CitaService {
       edad: query.edad,
       ingreso: query.ingreso,
       fecha_ini: query.fecha_ini,
-      fecha_fin: query.fecha_fin
+      fecha_fin: query.fecha_fin,
+      criterio: query.criterio
     };
     return this.http.post(this.ENDPOINT + "/cita-examen/", BODY, {
       headers: this.httpHeaders
@@ -62,7 +65,8 @@ export class CitaService {
       edad: query.edad,
       ingreso: query.ingreso,
       fecha_ini: query.fecha_ini,
-      fecha_fin: query.fecha_fin
+      fecha_fin: query.fecha_fin,
+      criterio: query.criterio
     };
     return this.http.post(this.ENDPOINT + "/otro-servicio/", BODY, {
       headers: this.httpHeaders
@@ -76,7 +80,8 @@ export class CitaService {
       edad: query.edad,
       ingreso: query.ingreso,
       fecha_ini: query.fecha_ini,
-      fecha_fin: query.fecha_fin
+      fecha_fin: query.fecha_fin,
+      criterio: query.criterio
     };
     return this.http.post(this.ENDPOINT + "/cita-institucion/", BODY, {
       headers: this.httpHeaders
