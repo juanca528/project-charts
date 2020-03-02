@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class CitaService {
-  ENDPOINT = "http://192.168.0.164:8000";
+  ENDPOINT = "http://192.168.0.168:8000";
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
@@ -95,7 +95,9 @@ export class CitaService {
 
   getAllOtherServicesByInstitution(query): Observable<any> {
     const BODY = {
-      institucion: query.institucion
+      institucion: query.institucion,
+      fecha_ini: query.fecha_ini,
+      fecha_fin: query.fecha_fin
     };
     return this.http.post(this.ENDPOINT + "/otro-servicio-institucion/", BODY, {
       headers: this.httpHeaders

@@ -111,8 +111,10 @@ export class CitasEspecialidadComponent implements OnInit {
           this.title = "Citas por especialidad";
           this.type = "PieChart";
           this.data = filt;
-          this.columnNames = ["Ciudad", "Cantidad afiliacione"];
-          this.options = {};
+          this.columnNames = ["Vendedor", "Cant. Afil."];
+          this.options = {
+            is3D: true
+          };
           this.width = 700;
           this.height = 500;
 
@@ -145,19 +147,30 @@ export class CitasEspecialidadComponent implements OnInit {
         data => {
           console.log(data);
           let items = Object.entries(data);
+          var filt = items.slice(0, 9);
           this.title = "Citas por especialista";
           this.type = "PieChart";
-          this.data = items;
+          this.data = filt;
           this.columnNames = ["Especialista", "Cantidad"];
-          this.options = {};
+          this.options = {
+            is3D: true
+          };
           this.width = 700;
           this.height = 500;
 
           this.title1 = "";
           this.type1 = "ColumnChart";
-          this.data1 = items;
-          this.columnNames1 = ["Vendedor", "Cant. Afil."];
+          this.data1 = filt;
+          this.columnNames1 = ["Especialista", "Cant. Afil."];
           this.options1 = {};
+          this.width = 900;
+          this.height = 500;
+
+          this.title2 = "";
+          this.type2 = "ComboChart";
+          this.data2 = filt;
+          this.columnNames2 = ["Especialista", "Cant. Afil."];
+          this.options2 = {};
           this.width = 900;
           this.height = 500;
         },
@@ -174,19 +187,32 @@ export class CitasEspecialidadComponent implements OnInit {
         data => {
           console.log(data);
           let items = Object.entries(data);
+          var filt = items.slice(0, 9);
           this.title = "Citas por examen";
           this.type = "PieChart";
-          this.data = items;
+          this.data = filt;
           this.columnNames = ["Examen", "Cantidad"];
-          this.options = {};
+          this.options = {
+            is3D: true
+          };
           this.width = 700;
           this.height = 500;
 
           this.title1 = "";
           this.type1 = "ColumnChart";
-          this.data1 = items;
-          this.columnNames1 = ["Vendedor", "Cant. Afil."];
+          this.data1 = filt;
+          this.columnNames1 = ["Examen", "Cant. Afil."];
           this.options1 = {};
+          this.width = 900;
+          this.height = 500;
+
+          this.title2 = "";
+          this.type2 = "ComboChart";
+          this.data2 = filt;
+          this.columnNames2 = ["Examen", "Cant. Afil."];
+          this.options2 = {
+            is3D: true
+          };
           this.width = 900;
           this.height = 500;
         },
@@ -201,19 +227,30 @@ export class CitasEspecialidadComponent implements OnInit {
       data => {
         console.log(data);
         let items = Object.entries(data);
+        var filt = items.slice(0, 9);
         this.title = "Otros Servicios";
         this.type = "PieChart";
-        this.data = items;
+        this.data = filt;
         this.columnNames = ["Examen", "Cantidad"];
-        this.options = {};
+        this.options = {
+          is3D: true
+        };
         this.width = 700;
         this.height = 500;
 
         this.title1 = "";
         this.type1 = "ColumnChart";
-        this.data1 = items;
+        this.data1 = filt;
         this.columnNames1 = ["Otros Servicios", "Cant. Afil."];
         this.options1 = {};
+        this.width = 900;
+        this.height = 500;
+
+        this.title2 = "";
+        this.type2 = "ComboChart";
+        this.data2 = filt;
+        this.columnNames2 = ["Otros servicios", "Cant. Afil."];
+        this.options2 = {};
         this.width = 900;
         this.height = 500;
       },
@@ -230,19 +267,30 @@ export class CitasEspecialidadComponent implements OnInit {
         data => {
           console.log(data);
           let items = Object.entries(data);
+          var filt = items.slice(0, 9);
           this.title = "Citas por Institucion";
           this.type = "PieChart";
-          this.data = items;
+          this.data = filt;
           this.columnNames = ["Institucion", "Cantidad"];
-          this.options = {};
+          this.options = {
+            is3D: true
+          };
           this.width = 700;
           this.height = 500;
 
           this.title1 = "";
           this.type1 = "ColumnChart";
-          this.data1 = items;
+          this.data1 = filt;
           this.columnNames1 = ["Institucion", "Cant. Afil."];
           this.options1 = {};
+          this.width = 900;
+          this.height = 500;
+
+          this.title2 = "";
+          this.type2 = "ComboChart";
+          this.data2 = filt;
+          this.columnNames2 = ["Institucion", "Cant. Afil."];
+          this.options2 = {};
           this.width = 900;
           this.height = 500;
         },

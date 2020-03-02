@@ -4,7 +4,13 @@
       <br />
       <h2>Opciones</h2>
       <label for="sede">Sede:</label>
-      <select name="" id="sede" class="form-control" [(ngModel)]="selectedMemberShipCity.sede" required>
+      <select
+        name=""
+        id="sede"
+        class="form-control"
+        [(ngModel)]="selectedMemberShipCity.sede"
+        required
+      >
         <option value="1">PALMIRA</option>
         <option value="2">CALI</option>
         <option value="3">TULUA</option>
@@ -14,19 +20,34 @@
         <option value="7">CHINCHINÁ</option>
       </select>
       <br />
-      <label for="fechaIni" >Fecha Inicio</label>
-      <input type="date" class="form-control" [(ngModel)]="selectedMemberShipCity.fecha_ini" required/>
+      <label for="fechaIni">Fecha Inicio</label>
+      <input
+        type="date"
+        class="form-control"
+        [(ngModel)]="selectedMemberShipCity.fecha_ini"
+        required
+      />
       <br />
       <label for="fechaFin">Fecha Final</label>
-      <input type="date" class="form-control " [(ngModel)]="selectedMemberShipCity.fecha_fin" required/>
+      <input
+        type="date"
+        class="form-control "
+        [(ngModel)]="selectedMemberShipCity.fecha_fin"
+        required
+      />
       <br />
-<!--       <label for="criterio">Criterio</label>
+      <!--       <label for="criterio">Criterio</label>
       <select name="criterio" id="criterio" class="form-control" [(ngModel)]="selectedMemberShipCity.criterio" required>
         <option value="1">MAYOR NUMERO DE VENTAS</option>
         <option value="0">MENOR NUMERO DE VENTAS</option>
       </select>
       <br /> -->
-      <input type="submit" class="btn btn-success" value="Consultar" (click)="getAllMemberShipByCity()" />
+      <input
+        type="submit"
+        class="btn btn-success"
+        value="Consultar"
+        (click)="getAllMemberShipByCity()"
+      />
     </div>
   </div>
   <div class="hero">
@@ -39,25 +60,57 @@
         <option value="1">Venta de Cupos por Perfíl Demográfico</option>
       </select> -->
       <h3>
-        Total de cupos por ciudad, para la sede {{selectedMemberShipCity.sede}}<br />
+        Total de cupos por ciudad, para la sede {{ selectedMemberShipCity.sede
+        }}<br />
         durante el periodo seleccionado
       </h3>
     </div>
     <div class="tres mt-3 ml-2">
       <div class="chart-uno">
-        <google-chart
-          #chart
-          [title]="title"
-          [type]="type"
-          [data]="data"
-          [columnNames]="columnNames"
-          [options]="options"
-          [width]="width"
-          [height]="height"
-        >
-        </google-chart>
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Torta">
+            <google-chart
+              #chart
+              [title]="title"
+              [type]="type"
+              [data]="data"
+              [columnNames]="columnNames"
+              [options]="options"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+          <mat-tab label="Barras">
+            <google-chart
+              #chart
+              [title]="title1"
+              [type]="type1"
+              [data]="data1"
+              [columnNames]="columnNames1"
+              [options]="options1"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+
+          <mat-tab label="Puntos">
+            <google-chart
+              #chart
+              [title]="title2"
+              [type]="type2"
+              [data]="data2"
+              [columnNames]="columnNames2"
+              [options]="options2"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+        </mat-tab-group>
       </div>
-<!--       <div class="chart-dos">
+      <!--       <div class="chart-dos">
         <google-chart
           #chart
           [title]="title1"

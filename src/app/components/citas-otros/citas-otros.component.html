@@ -14,7 +14,24 @@
         <option value="">--Seleccione una--</option>
         <option *ngFor="let x of institutions.sort()" value="{{x.id}}">{{x.nombre_institucion}}</option>
       </select>
-
+      <br />
+      <label for="fechaIni" [hidden]="params1">Fecha Inicio</label>
+      <input
+        [hidden]="params1"
+        type="date"
+        class="form-control"
+        [(ngModel)]="selectedOtherServiceInstitution.fecha_ini"
+        required
+      />
+      <br />
+      <label for="fechaFin" [hidden]="params1">Fecha Final</label>
+      <input
+        [hidden]="params1"
+        type="date"
+        class="form-control "
+        [(ngModel)]="selectedOtherServiceInstitution.fecha_fin"
+        required
+      />
       <br />
       <input
         type="submit"
@@ -45,17 +62,48 @@
     </div>
     <div class="tres mt-3 ml-2">
       <div class="chart-uno">
-        <google-chart
-          #chart
-          [title]="title"
-          [type]="type"
-          [data]="data"
-          [columnNames]="columnNames"
-          [options]="options"
-          [width]="width"
-          [height]="height"
-        >
-        </google-chart>
+        <mat-tab-group mat-align-tabs="center">
+          <mat-tab label="Torta">
+            <google-chart
+              #chart
+              [title]="title"
+              [type]="type"
+              [data]="data"
+              [columnNames]="columnNames"
+              [options]="options"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+          <mat-tab label="Barras">
+            <google-chart
+              #chart
+              [title]="title1"
+              [type]="type1"
+              [data]="data1"
+              [columnNames]="columnNames1"
+              [options]="options1"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+
+          <mat-tab label="Puntos">
+            <google-chart
+              #chart
+              [title]="title2"
+              [type]="type2"
+              [data]="data2"
+              [columnNames]="columnNames2"
+              [options]="options2"
+              [width]="width"
+              [height]="height"
+            >
+            </google-chart>
+          </mat-tab>
+        </mat-tab-group>
       </div>
       <!--       <div class="chart-dos">
             <google-chart
