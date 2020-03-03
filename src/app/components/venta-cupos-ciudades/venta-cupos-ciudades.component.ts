@@ -10,7 +10,7 @@ export class VentaCuposCiudadesComponent implements OnInit {
   selectedMemberShipCity;
   title = "";
   type = "PieChart";
-  data =[];
+  data = [];
   columnNames = ["Ciudad", "Cantidad afiliacione"];
   options = {};
   width = 700;
@@ -27,7 +27,7 @@ export class VentaCuposCiudadesComponent implements OnInit {
   columnNames2 = ["Vendedor", "Cant. Afil."];
   options2 = {};
 
-/*   title1 = "Fruits distribution";
+  /*   title1 = "Fruits distribution";
   type1 = "ComboChart";
   data1 = [
     ["Apples", 3, 2, 2.5],
@@ -62,10 +62,10 @@ export class VentaCuposCiudadesComponent implements OnInit {
     this.api.getAllMemberShipByCity(this.selectedMemberShipCity).subscribe(
       data => {
         let entries = Object.entries(data);
-        let filt = entries.splice(0,9);
+        let filt = entries.splice(0, 9);
         console.log(data);
         console.log(entries);
-        
+
         this.title = "";
         this.type = "PieChart";
         this.data = filt;
@@ -80,7 +80,21 @@ export class VentaCuposCiudadesComponent implements OnInit {
         this.type1 = "ColumnChart";
         this.data1 = filt;
         this.columnNames1 = ["Ciudad", "Cant. Afil."];
-        this.options1 = {};
+        this.options1 = {
+          vAxis: {
+            minValue: 0,
+            maxValue: 100,
+            format: "#'%'",
+            direction: 1
+          },
+
+          hAxis: {
+            maxTextLines: 10,
+            textStyle: {
+              fontSize: 8
+            }
+          }
+        };
         this.width = 900;
         this.height = 500;
 
