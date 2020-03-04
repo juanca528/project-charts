@@ -16,8 +16,8 @@ export class SolicitudComponent implements OnInit {
   options = {
     is3D: true
   };
-  width = 700;
-  height = 500;
+  width = 1000;
+  height = 1000;
 
   title1 = "";
   type1 = "BarChart";
@@ -56,7 +56,7 @@ export class SolicitudComponent implements OnInit {
       data => {
         console.log(data);
         let items = Object.entries(data);
-        let filt = items.slice(0,10)
+        let filt = items.slice(0, 10);
         this.title = "Consultas por solicitud de servicios";
         this.type = "PieChart";
         this.data = filt;
@@ -64,24 +64,46 @@ export class SolicitudComponent implements OnInit {
         this.options = {
           is3D: true
         };
-        this.width = 700;
-        this.height = 500;
 
         this.title1 = "";
         this.type1 = "ColumnChart";
         this.data1 = filt;
         this.columnNames1 = ["Ciudad", "Cant. Afil."];
-        this.options1 = {};
-        this.width = 900;
-        this.height = 500;
+        this.options1 = {
+          vAxis: {
+            minValue: 0,
+            maxValue: 100,
+            format: "#'%'",
+            direction: 1
+          },
+
+          hAxis: {
+            maxTextLines: 10,
+            textStyle: {
+              fontSize: 8
+            }
+          }
+        };
 
         this.title2 = "";
         this.type2 = "ComboChart";
         this.data2 = filt;
         this.columnNames2 = ["Ciudad", "Cant. Afil."];
-        this.options2 = {};
-        this.width = 900;
-        this.height = 500;
+        this.options2 = {
+          vAxis: {
+            minValue: 0,
+            maxValue: 100,
+            format: "#'%'",
+            direction: 1
+          },
+
+          hAxis: {
+            maxTextLines: 10,
+            textStyle: {
+              fontSize: 8
+            }
+          }
+        };
       },
       error => {
         console.log(error);

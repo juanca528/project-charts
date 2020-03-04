@@ -17,7 +17,7 @@ export class CitasEspecialidadComponent implements OnInit {
   data = [];
   columnNames = ["Ciudad", "Cantidad afiliacione"];
   options = {};
-  width = 700;
+  width = 1000;
   height = 500;
 
   //
@@ -115,24 +115,32 @@ export class CitasEspecialidadComponent implements OnInit {
           this.options = {
             is3D: true
           };
-          this.width = 700;
-          this.height = 500;
 
           this.title1 = "";
           this.type1 = "BarChart";
           this.data1 = filt;
           this.columnNames1 = ["Vendedor", "Cant. Afil."];
           this.options1 = {};
-          this.width = 900;
-          this.height = 500;
 
           this.title2 = "";
           this.type2 = "ComboChart";
           this.data2 = filt;
           this.columnNames2 = ["Vendedor", "Cant. Afil."];
-          this.options2 = {};
-          this.width = 900;
-          this.height = 500;
+          this.options2 = {
+            vAxis: {
+              minValue: 0,
+              maxValue: 100,
+              format: "#'%'",
+              direction: 1
+            },
+
+            hAxis: {
+              maxTextLines: 10,
+              textStyle: {
+                fontSize: 8
+              }
+            }
+          };
         },
         error => {
           console.log(error);
@@ -155,24 +163,32 @@ export class CitasEspecialidadComponent implements OnInit {
           this.options = {
             is3D: true
           };
-          this.width = 700;
-          this.height = 500;
 
           this.title1 = "";
           this.type1 = "ColumnChart";
           this.data1 = filt;
           this.columnNames1 = ["Especialista", "Cant. Afil."];
           this.options1 = {};
-          this.width = 900;
-          this.height = 500;
 
           this.title2 = "";
           this.type2 = "ComboChart";
           this.data2 = filt;
           this.columnNames2 = ["Especialista", "Cant. Afil."];
-          this.options2 = {};
-          this.width = 900;
-          this.height = 500;
+          this.options2 = {
+            vAxis: {
+              minValue: 0,
+              maxValue: 100,
+              format: "#'%'",
+              direction: 1
+            },
+
+            hAxis: {
+              maxTextLines: 10,
+              textStyle: {
+                fontSize: 8
+              }
+            }
+          };
         },
         error => {
           console.log(error);
@@ -195,26 +211,32 @@ export class CitasEspecialidadComponent implements OnInit {
           this.options = {
             is3D: true
           };
-          this.width = 700;
-          this.height = 500;
 
           this.title1 = "";
           this.type1 = "ColumnChart";
           this.data1 = filt;
           this.columnNames1 = ["Examen", "Cant. Afil."];
           this.options1 = {};
-          this.width = 900;
-          this.height = 500;
 
           this.title2 = "";
           this.type2 = "ComboChart";
           this.data2 = filt;
           this.columnNames2 = ["Examen", "Cant. Afil."];
           this.options2 = {
-            is3D: true
+            vAxis: {
+              minValue: 0,
+              maxValue: 100,
+              format: "#'%'",
+              direction: 1
+            },
+
+            hAxis: {
+              maxTextLines: 10,
+              textStyle: {
+                fontSize: 8
+              }
+            }
           };
-          this.width = 900;
-          this.height = 500;
         },
         error => {
           console.log(error);
@@ -235,24 +257,32 @@ export class CitasEspecialidadComponent implements OnInit {
         this.options = {
           is3D: true
         };
-        this.width = 700;
-        this.height = 500;
 
         this.title1 = "";
         this.type1 = "ColumnChart";
         this.data1 = filt;
         this.columnNames1 = ["Otros Servicios", "Cant. Afil."];
         this.options1 = {};
-        this.width = 900;
-        this.height = 500;
 
         this.title2 = "";
         this.type2 = "ComboChart";
         this.data2 = filt;
         this.columnNames2 = ["Otros servicios", "Cant. Afil."];
-        this.options2 = {};
-        this.width = 900;
-        this.height = 500;
+        this.options2 = {
+          vAxis: {
+            minValue: 0,
+            maxValue: 100,
+            format: "#'%'",
+            direction: 1
+          },
+
+          hAxis: {
+            maxTextLines: 10,
+            textStyle: {
+              fontSize: 8
+            }
+          }
+        };
       },
       error => {
         console.log(error);
@@ -275,24 +305,32 @@ export class CitasEspecialidadComponent implements OnInit {
           this.options = {
             is3D: true
           };
-          this.width = 700;
-          this.height = 500;
 
           this.title1 = "";
           this.type1 = "ColumnChart";
           this.data1 = filt;
           this.columnNames1 = ["Institucion", "Cant. Afil."];
           this.options1 = {};
-          this.width = 900;
-          this.height = 500;
 
           this.title2 = "";
           this.type2 = "ComboChart";
           this.data2 = filt;
           this.columnNames2 = ["Institucion", "Cant. Afil."];
-          this.options2 = {};
-          this.width = 900;
-          this.height = 500;
+          this.options2 = {
+            vAxis: {
+              minValue: 0,
+              maxValue: 100,
+              format: "#'%'",
+              direction: 1
+            },
+
+            hAxis: {
+              maxTextLines: 10,
+              textStyle: {
+                fontSize: 8
+              }
+            }
+          };
         },
         error => {
           console.log(error);

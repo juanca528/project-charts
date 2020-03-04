@@ -13,9 +13,9 @@ export class VentaCuposCiudadesComponent implements OnInit {
   data = [];
   columnNames = ["Ciudad", "Cantidad afiliacione"];
   options = {};
-  width = 700;
+  width = 1000;
   height = 500;
-
+  
   title1 = "";
   type1 = "BarChart";
   data1 = [];
@@ -73,8 +73,6 @@ export class VentaCuposCiudadesComponent implements OnInit {
         this.options = {
           is3D: true
         };
-        this.width = 700;
-        this.height = 500;
 
         this.title1 = "";
         this.type1 = "ColumnChart";
@@ -95,8 +93,6 @@ export class VentaCuposCiudadesComponent implements OnInit {
             }
           }
         };
-        this.width = 900;
-        this.height = 500;
 
         this.title2 = "";
         this.type2 = "ComboChart";
@@ -117,8 +113,6 @@ export class VentaCuposCiudadesComponent implements OnInit {
             }
           }
         };
-        this.width = 900;
-        this.height = 500;
       },
       error => {
         console.log(error);
