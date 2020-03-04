@@ -91,7 +91,7 @@ export class VentaCuposCiudadesComponent implements OnInit {
           hAxis: {
             maxTextLines: 10,
             textStyle: {
-              fontSize: 8
+              fontSize: 8,
             }
           }
         };
@@ -102,7 +102,21 @@ export class VentaCuposCiudadesComponent implements OnInit {
         this.type2 = "ComboChart";
         this.data2 = filt;
         this.columnNames2 = ["Ciudad", "Cant. Afil."];
-        this.options2 = {};
+        this.options2 = {
+          vAxis: {
+            minValue: 0,
+            maxValue: 100,
+            format: "#'%'",
+            direction: 1
+          },
+
+          hAxis: {
+            maxTextLines: 10,
+            textStyle: {
+              fontSize: 8,
+            }
+          }
+        };
         this.width = 900;
         this.height = 500;
       },

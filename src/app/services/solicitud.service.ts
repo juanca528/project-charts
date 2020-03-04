@@ -6,7 +6,7 @@ import { Observable } from "rxjs";
   providedIn: "root"
 })
 export class SolicitudService {
-  ENDPOINT = "http://192.168.0.168:8000";
+  ENDPOINT = "http://192.168.0.165:8000";
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });

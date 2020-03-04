@@ -7,7 +7,7 @@ import { CupoCiudad } from "../interfaces/cupo-ciudad";
   providedIn: "root"
 })
 export class CupoService {
-  ENDPOINT = "http://192.168.0.168:8000";
+  ENDPOINT = "http://192.168.0.165:8000";
   httpHeaders = new HttpHeaders({
     "Content-Type": "application/json"
   });
