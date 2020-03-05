@@ -44,6 +44,7 @@ export class CitasEspecialidadComponent implements OnInit {
   }
 
   comparacion() {
+    this.store()
     if (this.selectedAppointmentsBySpecialty.criterio == 1) {
       this.params1 = false;
       this.params2 = true;
@@ -55,29 +56,59 @@ export class CitasEspecialidadComponent implements OnInit {
   }
 
   store() {
-    if (this.tipoConsulta == 1) {
-      console.log(1);
-      this.titleMain =
-        "Total citas por especialidad según perfíl sociodemográfico";
+    if (this.selectedAppointmentsBySpecialty.criterio == 1) {
+      if (this.tipoConsulta == 1) {
+        console.log(1);
+        this.titleMain =
+          "Total citas por especialidad según un rango de fechas";
+      }
+      if (this.tipoConsulta == 2) {
+        console.log(2);
+        this.titleMain =
+          "Total citas por especialista según un rango de fechas";
+      }
+      if (this.tipoConsulta == 3) {
+        console.log(3);
+        this.titleMain =
+          "Total citas por examenes según un rango de fechas";
+      }
+      if (this.tipoConsulta == 4) {
+        console.log(4);
+        this.titleMain =
+          "Total citas por otro servicios según un rango de fechas";
+      }
+      if (this.tipoConsulta == 5) {
+        console.log(5);
+        this.titleMain =
+          "Total citas por institución según un rango de fechas";
+      }
     }
-    if (this.tipoConsulta == 2) {
-      console.log(2);
-      this.titleMain =
-        "Total citas por especialista según perfíl sociodemográfico";
-    }
-    if (this.tipoConsulta == 3) {
-      console.log(3);
-      this.titleMain = "Total citas por examenes según perfíl sociodemográfico";
-    }
-    if (this.tipoConsulta == 4) {
-      console.log(4);
-      this.titleMain =
-        "Total citas por otro servicios según perfíl sociodemográfico";
-    }
-    if (this.tipoConsulta == 5) {
-      console.log(5);
-      this.titleMain =
-        "Total citas por institución según perfíl sociodemográfico";
+    if (this.selectedAppointmentsBySpecialty.criterio == 2) {
+      if (this.tipoConsulta == 1) {
+        console.log(1);
+        this.titleMain =
+          "Total citas por especialidad según perfíl sociodemográfico";
+      }
+      if (this.tipoConsulta == 2) {
+        console.log(2);
+        this.titleMain =
+          "Total citas por especialista según perfíl sociodemográfico";
+      }
+      if (this.tipoConsulta == 3) {
+        console.log(3);
+        this.titleMain =
+          "Total citas por examenes según perfíl sociodemográfico";
+      }
+      if (this.tipoConsulta == 4) {
+        console.log(4);
+        this.titleMain =
+          "Total citas por otro servicios según perfíl sociodemográfico";
+      }
+      if (this.tipoConsulta == 5) {
+        console.log(5);
+        this.titleMain =
+          "Total citas por institución según perfíl sociodemográfico";
+      }
     }
   }
 
