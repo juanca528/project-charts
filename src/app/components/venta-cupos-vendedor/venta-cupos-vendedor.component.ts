@@ -8,6 +8,7 @@ import { CupoService } from "src/app/services/cupo.service";
 })
 export class VentaCuposVendedorComponent implements OnInit {
   selectedMemberShipSeller;
+  nameSede:string
   params = true;
   params1 = false;
   title = "";
@@ -51,6 +52,30 @@ export class VentaCuposVendedorComponent implements OnInit {
     if (this.params === false) {
       this.params = true;
       this.params1 = false;
+    }
+  }
+
+  getNameSede(id) {
+    if (id == 1) {
+      this.nameSede = "PALMIRA";
+    }
+    if (id == 2) {
+      this.nameSede = "CALI";
+    }
+    if (id == 3) {
+      this.nameSede = "TULÚA";
+    }
+    if (id == 4) {
+      this.nameSede = "PEREIRA";
+    }
+    if (id == 5) {
+      this.nameSede = "ARMENIA";
+    }
+    if (id == 6) {
+      this.nameSede = "PIENDAMÓ";
+    }
+    if (id == 7) {
+      this.nameSede = "CHINCHINÁ";
     }
   }
 

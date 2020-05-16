@@ -10,7 +10,8 @@
         class="form-control"
         [(ngModel)]="selectedMemberShipCity.sede"
         required
-      >
+        (change)="getNameSede(selectedMemberShipCity.sede)"
+      > 
         <option value="1">PALMIRA</option>
         <option value="2">CALI</option>
         <option value="3">TULUA</option>
@@ -60,7 +61,7 @@
         <option value="1">Venta de Cupos por Perfíl Demográfico</option>
       </select> -->
       <h3>
-        Total de cupos por ciudad, para la sede {{ selectedMemberShipCity.sede
+        Total de cupos por ciudad, para la sede {{ nameSede
         }}<br />
         durante el periodo seleccionado
       </h3>

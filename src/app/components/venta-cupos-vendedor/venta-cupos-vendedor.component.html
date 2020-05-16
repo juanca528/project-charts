@@ -46,7 +46,7 @@
       <label for="fechaFin">Fecha Final</label>
       <input
         type="date"
-        class="form-control "
+        class="form-control"
         [(ngModel)]="selectedMemberShipSeller.fecha_fin"
       />
       <br />
@@ -56,6 +56,7 @@
         id="sede"
         class="form-control"
         [(ngModel)]="selectedMemberShipSeller.sede"
+        (change)="getNameSede(selectedMemberShipSeller.sede)"
       >
         <option value="1">PALMIRA</option>
         <option value="2">CALI</option>
@@ -70,6 +71,7 @@
         type="submit"
         class="btn btn-success"
         value="Consultar"
+        
         (click)="getAllMemberShipBySeller()"
       />
     </div>
@@ -84,8 +86,8 @@
           <option value="1">Venta de Cupos por Perfíl Demográfico</option>
         </select> -->
       <h3>
-        Total de cupos por vendedor para la sede
-        {{ selectedMemberShipSeller.sede }}<br />
+        Total de cupos por vendedor para la sede {{ nameSede }}
+        <br />
         durante el periodo seleccionado
       </h3>
     </div>

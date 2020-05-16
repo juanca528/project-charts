@@ -4,7 +4,7 @@ import { CupoService } from "src/app/services/cupo.service";
 @Component({
   selector: "app-venta-cupos-ciudades",
   templateUrl: "./venta-cupos-ciudades.component.html",
-  styleUrls: ["./venta-cupos-ciudades.component.css"]
+  styleUrls: ["./venta-cupos-ciudades.component.css"],
 })
 export class VentaCuposCiudadesComponent implements OnInit {
   selectedMemberShipCity;
@@ -15,7 +15,8 @@ export class VentaCuposCiudadesComponent implements OnInit {
   options = {};
   width = 1000;
   height = 500;
-  
+  nameSede: string;
+
   title1 = "";
   type1 = "BarChart";
   data1 = [];
@@ -53,14 +54,38 @@ export class VentaCuposCiudadesComponent implements OnInit {
     this.selectedMemberShipCity = {
       sede: "",
       fecha_ini: "",
-      fecha_fin: ""
+      fecha_fin: "",
     };
+  }
+
+  getNameSede(id) {
+    if (id == 1) {
+      this.nameSede = "PALMIRA";
+    }
+    if (id == 2) {
+      this.nameSede = "CALI";
+    }
+    if (id == 3) {
+      this.nameSede = "TULÚA";
+    }
+    if (id == 4) {
+      this.nameSede = "PEREIRA";
+    }
+    if (id == 5) {
+      this.nameSede = "ARMENIA";
+    }
+    if (id == 6) {
+      this.nameSede = "PIENDAMÓ";
+    }
+    if (id == 7) {
+      this.nameSede = "CHINCHINÁ";
+    }
   }
 
   //Funcion que consulta las afiliaciones por ciudad.
   getAllMemberShipByCity = () => {
     this.api.getAllMemberShipByCity(this.selectedMemberShipCity).subscribe(
-      data => {
+      (data) => {
         let entries = Object.entries(data);
         let filt = entries.splice(0, 9);
         console.log(data);
@@ -71,7 +96,7 @@ export class VentaCuposCiudadesComponent implements OnInit {
         this.data = filt;
         this.columnNames = ["Ciudad", "Cantidad afiliacione"];
         this.options = {
-          is3D: true
+          is3D: true,
         };
 
         this.title1 = "";
@@ -83,15 +108,15 @@ export class VentaCuposCiudadesComponent implements OnInit {
             minValue: 0,
             maxValue: 100,
             format: "#'%'",
-            direction: 1
+            direction: 1,
           },
 
           hAxis: {
             maxTextLines: 10,
             textStyle: {
               fontSize: 8,
-            }
-          }
+            },
+          },
         };
 
         this.title2 = "";
@@ -103,18 +128,18 @@ export class VentaCuposCiudadesComponent implements OnInit {
             minValue: 0,
             maxValue: 100,
             format: "#'%'",
-            direction: 1
+            direction: 1,
           },
 
           hAxis: {
             maxTextLines: 10,
             textStyle: {
               fontSize: 8,
-            }
-          }
+            },
+          },
         };
       },
-      error => {
+      (error) => {
         console.log(error);
       }
     );
